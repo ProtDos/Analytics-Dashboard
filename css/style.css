@@ -1,0 +1,325 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background-color: #222222;
+}
+.container {
+  width: 283px;
+  margin: 0 auto;
+}
+.widget {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  width: 500px !important;
+}
+.section:first-child {
+  border-radius: 5px 5px 0 0;
+}
+/*
+ * Graph section
+ */
+.section-graph {
+  position: relative;
+  height: 151px;
+  color: #fff;
+  background: #55bc75;
+  background-image: linear-gradient(color-stops(#55bc75, #55bc75 50%, #4daf7c 50%));
+}
+.section-graph .graph-info {
+  z-index: 99;
+  position: absolute;
+  font-weight: bold;
+  margin-top: 18px;
+  margin-left: 21px;
+  width: 100px;
+}
+.section-graph .graph-info .graph-arrow {
+  width: 0;
+  height: 0;
+  margin-top: 18px;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid white;
+  float: left;
+}
+.section-graph .graph-info .graph-info-big {
+  font-size: 24px;
+  float: left;
+  margin-left: 3px;
+}
+.section-graph .graph-info .graph-info-small {
+  font-size: 12px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 8px;
+}
+/*
+ * Info Section
+ */
+h3 {
+  font-size: 18px;
+  margin-top: 2px;
+}
+h4 {
+  font-size: 13px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.section-info {
+  padding: 21px 21px 41px;
+  color: #8a786a;
+  overflow: hidden;
+}
+.info-time {
+  font-size: 12px;
+}
+.info-block {
+  background-color: #f5f0ec;
+  text-align: center;
+  width: 150px;
+  margin-top: 20px !important;
+  border-radius: 5px;
+  float: middle;
+  align-items: center;
+  padding: 4px 0;
+}
+.section-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-block {
+  margin-top: 10px; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-block.last {
+  margin-left: 1px;
+}
+.info-block dt, .info-block dd {
+  margin: 0;
+  padding: 0;
+}
+.info-block dt {
+  font-weight: bold;
+}
+.info-block dd {
+  font-size: 12px;
+}
+.info-aapl {
+  float: left;
+}
+.info-aapl ul {
+  margin: 0;
+  padding: 0;
+}
+.info-aapl li {
+  margin: 0;
+  display: block;
+  width: 9px;
+  height: 40px;
+  margin-right: 6px;
+  background-color: #f5f0ec;
+  float: left;
+  position: relative;
+}
+.info-aapl li span {
+  display: block;
+  width: 9px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+}
+.info-aapl li span.orange {
+  background-color: #e75e3a;
+}
+.info-aapl li span.green {
+  background-color: #4eaf7c;
+}
+.yearly-change {
+  width: 94px;
+  float: right;
+}
+.yearly-change span {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  color: white;
+  background-color: #4eaf7c;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.yearly-change span em {
+  color: rgba(255, 255, 255, 0.7);
+}
+.info-title a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.info-block dd {
+  padding-top: 5px;
+}
+
+.container {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Horizontally center items */
+  height: 100vh; /* Ensure container takes up full viewport height */
+}
+
+
+
+.widget {
+  height: 500px !important;
+}
+
+#svg-container {
+  position: relative;
+}
+
+#svg-container svg {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+}
+
+
+/* This is for the settings popup */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  z-index: 9999;
+  display: none;
+}
+
+.popup ul, ol {
+  list-style-type: none;
+}
+
+.popup li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+
+  transform: translateX(-30px);
+}
+.popup li:hover {
+  background-color: #424242;
+}
+
+/* Popup container styles */
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2f2f2f;
+  border-radius: 20px;
+  padding: 30px;
+  width: 500px; /* Increased width for the sidebar */
+  z-index: 10000;
+  display: none;
+  display: flex; /* Make the popup container a flex container */
+}
+
+/* Left sidebar styles */
+.sidebar-left {
+  flex: 1; /* Occupy 1/3 of the available space */
+  padding-right: 20px;
+}
+
+/* Right sidebar styles */
+.sidebar-right {
+  flex: 2; /* Occupy 2/3 of the available space */
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #f9f9f9;
+  font-weight: bold;
+
+  padding: 8px;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+
+/* Options container styles */
+.options {
+  margin-top: 20px;
+}
+
+/* Option styles */
+.option {
+  margin-bottom: 10px;
+}
+
+/* Button styles */
+.button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup h2, li, p {
+  color: #f9f9f9;
+}
+
+/* Text and button styles for the right sidebar */
+.sidebar-right-content {
+  margin-top: 20px;
+}
+
+#svg-container svg {
+  cursor: pointer;
+}
+
+#svg-container svg:hover {
+  background-color: #4f4f4f;
+  border-radius: 8px;
+}
+
+.section-graph {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.something {
+  background-color: #55BC75;
+  position: relative;
+  height: 10px;
+}
